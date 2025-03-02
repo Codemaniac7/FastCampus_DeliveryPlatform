@@ -89,9 +89,8 @@ public class JwtTokenHelper implements TokenHelperIfs {
                 .setSigningKey(key)
                 .build();
         try {
-            var result = new HashMap<String, Object>();
-
-            parser.parseClaimsJws(token);
+            var result = parser.parseClaimsJws(token);
+            return new HashMap<String,Object>(result.getBody());
 
         } catch(Exception e) {
             if(e instanceof SignatureException) {
@@ -106,7 +105,5 @@ public class JwtTokenHelper implements TokenHelperIfs {
                 throw new ApiException(ErrorCode.SERVER_ERROR, e);
             }
         }
-
-        return Map.of();
     }
 }
