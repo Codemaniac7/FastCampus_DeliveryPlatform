@@ -62,8 +62,8 @@ public class UserBusiness {
         return tokenResponse;
     }
 
-    public UserResponse me(User user) {
-        var userEntity = userService.getUserWithThrow(user.getId());
+    public UserResponse me(Long userId) {
+        var userEntity = userService.getUserWithThrow(userId);
         var response = userConverter.toResponse(userEntity);
         return response;
     }
