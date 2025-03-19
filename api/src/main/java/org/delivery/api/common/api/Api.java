@@ -14,8 +14,6 @@ import javax.validation.Valid;
 public class Api<T> {
 
     private Result result;
-
-    @Valid
     private T body;
 
     public static <T> Api<T> OK(T data) {
