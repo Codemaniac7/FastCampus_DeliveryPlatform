@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class StoreService {
+public class  StoreService {
     private final StoreRepository storeRepository;
 
     // 유효한 스토어 가져오기
